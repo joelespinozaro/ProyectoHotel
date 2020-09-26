@@ -18,8 +18,8 @@ public class Reserva {
         return cesta;
     }
     
-    public void agregar(Habitacion habit, String fechaInicial, String fechaFinal, int cantDias){
-        Linea lin = new Linea(habit, fechaInicial,fechaFinal,cantDias);
+    public void agregar(Habitacion habit, String fechaInicial, String fechaFinal){
+        Linea lin = new Linea(habit, fechaInicial,fechaFinal);
         cesta.add(lin);
     }
     

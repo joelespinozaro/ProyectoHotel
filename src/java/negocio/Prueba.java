@@ -16,10 +16,10 @@ public class Prueba {
         
         Reserva reserva = new Reserva();
         
-        reserva.agregar(h1, "01/10/2020", "02/10/2020", 2);
-        reserva.agregar(h2, "04/10/2020", "08/10/2020", 5);
-        reserva.agregar(h3, "06/10/2020", "07/10/2020", 2);
-        reserva.agregar(h4, "08/10/2020", "10/10/2020", 3);
+        reserva.agregar(h1, "01/10/2020", "02/10/2020");
+        reserva.agregar(h2, "04/10/2020", "08/10/2020");
+        reserva.agregar(h3, "06/10/2020", "07/10/2020");
+        reserva.agregar(h4, "08/10/2020", "10/10/2020");
         
         //reserva.quitar("401");
 

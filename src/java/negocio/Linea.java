@@ -9,7 +9,6 @@ import java.util.concurrent.TimeUnit;
 public class Linea {
     private Habitacion habit;
     private String fechaInicial,fechaFinal;
-    private int cantDias;
 
     public Linea() {
     }

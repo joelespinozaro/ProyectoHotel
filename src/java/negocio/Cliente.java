@@ -1,4 +1,4 @@
-package negocio;
+ package negocio;
 
 public class Cliente {
     private String dni, nombres, apellidos, celular, email;

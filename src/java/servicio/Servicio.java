@@ -1,5 +1,7 @@
 package servicio;
 
+import negocio.Empleado;
+
 public interface Servicio {
-    public Object[] buscarEmpleado(String username,String password);
+    public Empleado validarEmpleado(String username,String password);
 }

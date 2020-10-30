@@ -18,7 +18,6 @@ public class Control extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         ser = new ServicioFachada();
-        Object[] fil = ser.buscarEmpleado(username, password);
         if(username.isEmpty() && password.isEmpty()){
             response.sendRedirect("Acceso.jsp");
         }else{

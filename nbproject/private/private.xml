@@ -5,8 +5,11 @@
         <group>
             <file>file:/C:/Users/joelespinozaro/Documents/NetBeansProjects/ProyectoHotel/src/java/negocio/Linea.java</file>
             <file>file:/C:/Users/joelespinozaro/Documents/NetBeansProjects/ProyectoHotel/src/java/negocio/Reserva.java</file>
+            <file>file:/C:/Users/joelespinozaro/Documents/NetBeansProjects/ProyectoHotel/src/java/persistencia/Prueba.java</file>
             <file>file:/C:/Users/joelespinozaro/Documents/NetBeansProjects/ProyectoHotel/src/java/negocio/Prueba.java</file>
             <file>file:/C:/Users/joelespinozaro/Documents/NetBeansProjects/ProyectoHotel/src/java/negocio/Cliente.java</file>
+            <file>file:/C:/Users/joelespinozaro/Documents/NetBeansProjects/ProyectoHotel/src/java/persistencia/DAOEmpleadoImp.java</file>
+            <file>file:/C:/Users/joelespinozaro/Documents/NetBeansProjects/ProyectoHotel/src/java/persistencia/DAOEmpleado.java</file>
         </group>
     </open-files>
 </project-private>

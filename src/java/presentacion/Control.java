@@ -6,18 +6,18 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import servicio.Servicio;
-import servicio.ServicioFachada;
+import servicio.ServicioEmpleadoImp;
+import servicio.ServicioEmpleado;
 
 @WebServlet(name = "Control", urlPatterns = {"/Control"})
 public class Control extends HttpServlet {
-    private Servicio ser;
+    private ServicioEmpleado ser;
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        ser = new ServicioFachada();
+        ser = new ServicioEmpleadoImp();
         if(username.isEmpty() && password.isEmpty()){
             response.sendRedirect("Acceso.jsp");
         }else{

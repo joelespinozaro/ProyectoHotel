@@ -27,11 +27,7 @@ public class DAOEmpleadoImp implements DAOEmpleado {
                 empleados.add(emp);
             }
             return empleados;
-        }else{
-            
         }
-        
-        
         return null;
     }
 
@@ -49,4 +45,11 @@ public class DAOEmpleadoImp implements DAOEmpleado {
          }
         return null;
     }
+
+    @Override
+    public String actualizar(Empleado emp) {
+        String sql="update empleado set password='"+emp.getPassword()+"' where codigo='"+emp.getCodigo()+"'";
+        return Operacion.ejecutar(sql);
+    }
+    
 }

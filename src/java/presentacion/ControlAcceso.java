@@ -1,3 +1,4 @@
+
 package presentacion;
 
 import java.io.IOException;
@@ -6,24 +7,44 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import servicio.ServicioEmpleadoImp;
+import negocio.Empleado;
 import servicio.ServicioEmpleado;
+import servicio.ServicioEmpleadoImp;
 
-@WebServlet(name = "Control", urlPatterns = {"/Control"})
-public class Control extends HttpServlet {
-    private ServicioEmpleado ser;
+
+@WebServlet(name = "ControlAcceso", urlPatterns = {"/ControlAcceso"})
+public class ControlAcceso extends HttpServlet {
+    
+    private ModeloEmpleado modEmp;
+    private ServicioEmpleado serEmp;
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
-        ser = new ServicioEmpleadoImp();
-        if(username.isEmpty() && password.isEmpty()){
-            response.sendRedirect("Acceso.jsp");
-        }else{
-            response.sendRedirect("Home.jsp");
-        }
+        String acc=request.getParameter("acc");
         
+        if(acc.equals("Ingresar")){
+              modEmp = new ModeloEmpleado();
+              serEmp = new ServicioEmpleadoImp();
+              
+              request.getSession().setAttribute("sesEmp", modEmp);
+              response.sendRedirect("Acceso.jsp");
+        }  
+        if(acc.equals("Iniciar Sesion")){
+            String usuario = request.getParameter("usuario");
+            String password = request.getParameter("password");
+            
+            Empleado emp=serEmp.validarEmpleado(usuario, password);
+            if(emp!=null){
+                modEmp.setCodigo(emp.getCodigo());
+                modEmp.setNombre(emp.getNombre());
+                response.sendRedirect("Home.jsp");
+            }else{
+                modEmp.setMsg("Credenciales Incorrectas");
+                response.sendRedirect("Acceso.jsp");
+            }
+        }
+            
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

@@ -4,6 +4,7 @@
     Author     : joelespinozaro
 --%>
 
+<%@page import="presentacion.ModeloEmpleado"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -12,6 +13,13 @@
         <title>Home / ProyectoHotel</title>
     </head>
     <body>
-        <h1>Bienvenido </h1>
+        <% ModeloEmpleado modEmp =(ModeloEmpleado)session.getAttribute("sesEmp"); %>
+        <h1>Menú Principal </h1>
+        
+        <p>Bienvenido(a) <%= modEmp.getCodigo() %> · <%= modEmp.getNombre()%></p>
+        
+        <form action="ControlEmpleado" method="Post">
+            <input type="submit" name="acc" value="Nuevo"/>
+        </form>
     </body>
 </html>

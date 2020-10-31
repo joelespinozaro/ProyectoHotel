@@ -3,16 +3,26 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/joelespinozaro/Documents/NetBeansProjects/ProyectoHotel/src/java/negocio/Empleado.java</file>
             <file>file:/C:/Users/joelespinozaro/Documents/NetBeansProjects/ProyectoHotel/src/java/servicio/ServicioEmpleado.java</file>
-            <file>file:/C:/Users/joelespinozaro/Documents/NetBeansProjects/ProyectoHotel/src/java/persistencia/Conexion.java</file>
-            <file>file:/C:/Users/joelespinozaro/Documents/NetBeansProjects/ProyectoHotel/src/java/servicio/ServicioEmpleadoImp.java</file>
+            <file>file:/C:/Users/joelespinozaro/Documents/NetBeansProjects/ProyectoHotel/src/java/persistencia/DAOHabitacionImp.java</file>
+            <file>file:/C:/Users/joelespinozaro/Documents/NetBeansProjects/ProyectoHotel/src/java/servicio/ServicioCliente.java</file>
             <file>file:/C:/Users/joelespinozaro/Documents/NetBeansProjects/ProyectoHotel/src/java/persistencia/Prueba.java</file>
-            <file>file:/C:/Users/joelespinozaro/Documents/NetBeansProjects/ProyectoHotel/src/java/servicio/Prueba.java</file>
-            <file>file:/C:/Users/joelespinozaro/Documents/NetBeansProjects/ProyectoHotel/src/java/persistencia/DAOEmpleado.java</file>
+            <file>file:/C:/Users/joelespinozaro/Documents/NetBeansProjects/ProyectoHotel/src/java/persistencia/DAOHabitacion.java</file>
+            <file>file:/C:/Users/joelespinozaro/Documents/NetBeansProjects/ProyectoHotel/src/java/persistencia/DAOReservaImp.java</file>
+            <file>file:/C:/Users/joelespinozaro/Documents/NetBeansProjects/ProyectoHotel/src/java/servicio/ServicioHabitacionImp.java</file>
             <file>file:/C:/Users/joelespinozaro/Documents/NetBeansProjects/ProyectoHotel/src/java/persistencia/DAOEmpleadoImp.java</file>
-            <file>file:/C:/Users/joelespinozaro/Documents/NetBeansProjects/ProyectoHotel/src/java/persistencia/DAOCliente.java</file>
+            <file>file:/C:/Users/joelespinozaro/Documents/NetBeansProjects/ProyectoHotel/src/java/servicio/ServicioReserva.java</file>
             <file>file:/C:/Users/joelespinozaro/Documents/NetBeansProjects/ProyectoHotel/src/java/persistencia/DAOClienteImp.java</file>
+            <file>file:/C:/Users/joelespinozaro/Documents/NetBeansProjects/ProyectoHotel/src/java/persistencia/DAOTipoHabitacionImp.java</file>
+            <file>file:/C:/Users/joelespinozaro/Documents/NetBeansProjects/ProyectoHotel/src/java/servicio/ServicioReservaImp.java</file>
+            <file>file:/C:/Users/joelespinozaro/Documents/NetBeansProjects/ProyectoHotel/src/java/servicio/ServicioHabitacion.java</file>
+            <file>file:/C:/Users/joelespinozaro/Documents/NetBeansProjects/ProyectoHotel/src/java/persistencia/DAOReserva.java</file>
+            <file>file:/C:/Users/joelespinozaro/Documents/NetBeansProjects/ProyectoHotel/src/java/servicio/ServicioEmpleadoImp.java</file>
+            <file>file:/C:/Users/joelespinozaro/Documents/NetBeansProjects/ProyectoHotel/src/java/negocio/TipoHabitacion.java</file>
+            <file>file:/C:/Users/joelespinozaro/Documents/NetBeansProjects/ProyectoHotel/src/java/servicio/ServicioClienteImp.java</file>
+            <file>file:/C:/Users/joelespinozaro/Documents/NetBeansProjects/ProyectoHotel/src/java/servicio/Prueba.java</file>
+            <file>file:/C:/Users/joelespinozaro/Documents/NetBeansProjects/ProyectoHotel/src/java/persistencia/DAOCliente.java</file>
+            <file>file:/C:/Users/joelespinozaro/Documents/NetBeansProjects/ProyectoHotel/src/java/persistencia/DAOEmpleado.java</file>
         </group>
     </open-files>
 </project-private>

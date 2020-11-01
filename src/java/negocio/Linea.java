@@ -20,7 +20,7 @@ public class Linea {
     }
     
     public double getImporte(){
-        return this.getHabit().getTipo().getPrecio() * this.getCantDias() * 1.0;
+        return this.getHabit().getPrecio() * this.getCantDias() * 1.0;
     }
 
     public Habitacion getHabit() {

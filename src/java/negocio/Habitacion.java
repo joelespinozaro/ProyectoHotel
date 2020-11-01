@@ -1,16 +1,18 @@
 package negocio;
 
 public class Habitacion {
-    private String codigo;
-    private TipoHabitacion tipo;
+    private String codigo,nombre, tipoHabitacion;
+    private double precio;
 
 
     public Habitacion() {
     }
 
-    public Habitacion(String codigo, TipoHabitacion tipo) {
+    public Habitacion(String codigo, String nombre, String tipoHabitacion, double precio) {
         this.codigo = codigo;
-        this.tipo = tipo;
+        this.nombre = nombre;
+        this.tipoHabitacion = tipoHabitacion;
+        this.precio = precio;
     }
 
     public String getCodigo() {
@@ -21,13 +23,31 @@ public class Habitacion {
         this.codigo = codigo;
     }
 
-    public TipoHabitacion getTipo() {
-        return tipo;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setTipo(TipoHabitacion tipo) {
-        this.tipo = tipo;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
+
+    public String getTipoHabitacion() {
+        return tipoHabitacion;
+    }
+
+    public void setTipoHabitacion(String tipoHabitacion) {
+        this.tipoHabitacion = tipoHabitacion;
+    }
+
+    public double getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(double precio) {
+        this.precio = precio;
+    }
+
+    
 
     
     

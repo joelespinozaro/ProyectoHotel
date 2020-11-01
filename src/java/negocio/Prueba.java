@@ -5,15 +5,12 @@ import java.util.List;
 public class Prueba {
 
     public static void main(String[] args) {
-        TipoHabitacion th1 = new TipoHabitacion("001","Habitación Básica","Es una habitación simple",200);
-        TipoHabitacion th2 = new TipoHabitacion("002","Habitación Superior","Es una habitación superior",400);
-        TipoHabitacion th3 = new TipoHabitacion("003","Habitación Premium","Es una habitación única",600);
-        
-        Habitacion h1 = new Habitacion("401", th1);
-        Habitacion h2 = new Habitacion("402", th1);
-        Habitacion h3 = new Habitacion("510",th2);
-        Habitacion h4 = new Habitacion("901",th3);
-        
+
+        Habitacion h1 = new Habitacion("401","Habitación Doble", "Doble", 200.0);
+        Habitacion h2 = new Habitacion("402","Habitación Simple", "Simple", 100.0);
+        Habitacion h3 = new Habitacion("503","Habitación Matrimonial", "Matrimonial", 250.0);
+        Habitacion h4 = new Habitacion("504","Habitación Cuadruple", "Cuadruple", 350.0);
+
         Reserva reserva = new Reserva();
         
         reserva.agregar(h1, "01/10/2020", "02/10/2020");
@@ -28,15 +25,15 @@ public class Prueba {
         for(int i = 0; i < cesta.size();i++){
             Linea lin = (Linea)cesta.get(i);
             String codigo = lin.getHabit().getCodigo();
-            String nombre = lin.getHabit().getTipo().getNombre();
-            double precio = lin.getHabit().getTipo().getPrecio();
+            String nombre = lin.getHabit().getNombre();
+            double precio = lin.getHabit().getPrecio();
             int cantDias = lin.getCantDias();
             double importe = lin.getImporte();
             
             System.out.println(codigo+ "  "+nombre+ "  "+precio+"  "+cantDias+ "  "+importe);
         }
          System.out.println("Sub Total: "+reserva.getSubTot());
-         reserva.setPorDesc(12);
+         reserva.setPorDesc(10);
          System.out.println("Descuento: "+reserva.getDesc());
          System.out.println("Total: "+reserva.getTotal());
         

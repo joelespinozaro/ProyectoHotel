@@ -52,7 +52,7 @@ public class DAOClienteImp implements DAOCliente{
 
     @Override
     public String actualizar(Cliente client) {
-        String sql="update cliente set celular='"+client.getCelular()+"' where dni='"+client.getNombres()+"'";
+        String sql="update cliente set celular='"+client.getCelular()+"' where dni='"+client.getDni()+"'";
         return Operacion.ejecutar(sql);
     }
     

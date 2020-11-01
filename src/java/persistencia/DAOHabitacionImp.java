@@ -3,13 +3,13 @@ package persistencia;
 import java.util.ArrayList;
 import java.util.List;
 import negocio.Habitacion;
-import negocio.TipoHabitacion;
 
 public class DAOHabitacionImp implements DAOHabitacion {
 
     @Override
     public String grabar(Habitacion habitacion) {
-        String sql="insert into habitacion values('"+habitacion.getCodigo()+"','"+habitacion.getTipo()+"')";
+        String sql="insert into habitacion values('"+habitacion.getCodigo()+"','"+habitacion.getNombre()
+                +"','"+habitacion.getTipoHabitacion()+"',"+habitacion.getPrecio()+")";
         return Operacion.ejecutar(sql);
     }
 
@@ -23,11 +23,9 @@ public class DAOHabitacionImp implements DAOHabitacion {
                 Object[]fila = (Object[]) lista.get(i);
                 Habitacion habitacion = new Habitacion();
                 habitacion.setCodigo(fila[0].toString());
-                
-                DAOTipoHabitacion daoTipoH = new DAOTipoHabitacionImp();
-                TipoHabitacion th = daoTipoH.buscar(fila[1].toString());
-                habitacion.setTipo(th);
-                
+                habitacion.setNombre(fila[1].toString());
+                habitacion.setTipoHabitacion(fila[2].toString());
+                habitacion.setPrecio((double)fila[3]);
                 habitaciones.add(habitacion);
             }
             return habitaciones;
@@ -42,10 +40,9 @@ public class DAOHabitacionImp implements DAOHabitacion {
          if(fila!=null){
             Habitacion habitacion = new Habitacion();
             habitacion.setCodigo(fila[0].toString());
-            
-            DAOTipoHabitacion daoTipoH = new DAOTipoHabitacionImp();
-            TipoHabitacion th = daoTipoH.buscar(fila[1].toString());
-            habitacion.setTipo(th);
+            habitacion.setNombre(fila[1].toString());
+            habitacion.setTipoHabitacion(fila[2].toString());
+            habitacion.setPrecio((double)fila[3]);
             
             return habitacion;
          }
@@ -53,9 +50,10 @@ public class DAOHabitacionImp implements DAOHabitacion {
     }
 
     @Override
-    public String actualizar(Habitacion habitacion, TipoHabitacion tHabita) {
-        String sql="update habitacion set codtipohabitacion='"+tHabita.getCodigo()+"' where codigo='"+habitacion.getCodigo()+"'";
+    public String actualizar(Habitacion habitacion) {
+        String sql="update habitacion set Nombre='"+habitacion.getNombre()+"',tipo='"+habitacion.getTipoHabitacion()
+                +"' where codigo='"+habitacion.getCodigo()+"'";
         return Operacion.ejecutar(sql);
     }
-    
+
 }

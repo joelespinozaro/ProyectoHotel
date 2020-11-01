@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Operacion {
     public static String ejecutar(String sql){
-        String msg = "Operación Exitosa 🔥 ";
+        String msg = "Operación Exitosa 💯";
         try {
             Connection cn = new Conexion().getConexion();
             if(cn != null){

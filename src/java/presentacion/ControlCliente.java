@@ -4,70 +4,65 @@ import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
+import negocio.Cliente;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import negocio.Empleado;
-import servicio.ServicioEmpleado;
-import servicio.ServicioEmpleadoImp;
+import servicio.ServicioClienteImp;
 
-
-@WebServlet(name = "ControlEmpleado", urlPatterns = {"/ControlEmpleado"})
-public class ControlEmpleado extends HttpServlet {
-    private ModeloEmpleado modEmp;
-    private ServicioEmpleado serEmp;
+@WebServlet(name = "ControlCliente", urlPatterns = {"/ControlCliente"})
+public class ControlCliente extends HttpServlet {
+    private ModeloCliente modCli;
+    private ServicioClienteImp serCli;
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
         String acc = request.getParameter("acc");
-            
-                    
-                    
+        
             if(acc.equals("Regresar")){
               response.sendRedirect("Home.jsp");  
             }else {
-                
-
-            if(acc.equals("Nuevo") || acc.equals("Gestion de Empleado")){
-              modEmp = new ModeloEmpleado();
-              serEmp = new ServicioEmpleadoImp();
+        
+            if(acc.equals("Nuevo") || acc.equals("Gestion de Cliente")){
+              modCli = new ModeloCliente();
+              serCli = new ServicioClienteImp();
               
-              request.getSession().setAttribute("sesEmp", modEmp);
-            }  
-            
+              request.getSession().setAttribute("sesCli", modCli);
+            }
+        
             if(acc.equals("Grabar")){
-              String codigo = request.getParameter("codigo");
-              String nombre = request.getParameter("nombre");
-              String usuario = request.getParameter("usuario");
-              String password = request.getParameter("password");
+              String dni = request.getParameter("dni");
+              String nombres = request.getParameter("nombres");
+              String apellidos = request.getParameter("apellidos");
+              String celular = request.getParameter("celular");
+              String email = request.getParameter("email");
               
-              String msg = serEmp.grabarEmpleado(codigo, nombre, usuario, password);
-              modEmp.setMsg(msg);
+              String msg = serCli.grabarCliente(dni, nombres, apellidos, celular, email);
+              modCli.setMsg(msg);
             }
             
             if(acc.equals("Buscar")){
-              String codigo = request.getParameter("codigo");
-              Empleado emp = serEmp.buscarEmpleado(codigo);
-              if(emp!=null){
-                  modEmp.setCodigo(emp.getCodigo());
-                  modEmp.setNombre(emp.getNombre());
-                  modEmp.setUsuario(emp.getUsuario());
-                  modEmp.setPassword(emp.getPassword());
+              String dni = request.getParameter("dni");
+              Cliente cli = serCli.buscarCliente(dni);
+              if(cli!=null){
+                  modCli.setDni(cli.getDni());
+                  modCli.setNombres(cli.getNombres());
+                  modCli.setApellidos(cli.getApellidos());
+                  modCli.setCelular(cli.getCelular());
+                  modCli.setEmail(cli.getEmail());
               }else{
-                  modEmp.setMsg("No existe el empleado.");
+                  modCli.setMsg("No existe el cliente.");
               }
             }
             
             if(acc.equals("Actualizar")){
-              String codigo = request.getParameter("codigo");
-              String password = request.getParameter("password");
+              String dni = request.getParameter("dni");
+              String celular = request.getParameter("celular");
 
-              String msg = serEmp.actuaizarEmpleado(codigo, password);
-              modEmp.setMsg(msg);
+              String msg = serCli.actuaizarCliente(dni, celular);
+              modCli.setMsg(msg);
             }
-            
-            response.sendRedirect("VistaEmpleado.jsp");
+            response.sendRedirect("VistaCliente.jsp");
             }
-
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

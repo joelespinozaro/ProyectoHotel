@@ -15,20 +15,10 @@ public class DAOHabitacionImp implements DAOHabitacion {
 
     @Override
     public List listar() {
-        List<Habitacion> habitaciones = new ArrayList();
         String sql = "select * from habitacion";
         List lista = Operacion.listar(sql);
         if(lista != null){
-            for (int i = 1; i < lista.size(); i++) {
-                Object[]fila = (Object[]) lista.get(i);
-                Habitacion habitacion = new Habitacion();
-                habitacion.setCodigo(fila[0].toString());
-                habitacion.setNombre(fila[1].toString());
-                habitacion.setTipoHabitacion(fila[2].toString());
-                habitacion.setPrecio((double)fila[3]);
-                habitaciones.add(habitacion);
-            }
-            return habitaciones;
+            return lista;
         }
         return null;
     }

@@ -1,4 +1,5 @@
 package servicio;
+import java.util.List;
 import negocio.*;
 
 
@@ -7,4 +8,5 @@ public interface ServicioReserva {
     public void agregarHabitacion(String cod,String fechaIni, String fechaFin);
     public void quitarHabitacion(String cod);
     public String grabarReserva(String estado,String dni);
+    public List listarHabitaciones();
 }

@@ -1,54 +1,30 @@
-<%-- 
-    Document   : Acceso
-    Created on : 25/09/2020, 11:10:16 AM
-    Author     : joelespinozaro
---%>
-
 <%@page import="presentacion.ModeloEmpleado"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Proyecto Hotel</title>
-        <style>
-            h1{
-                text-align:center;
-            }
-            form {
-                display: flex;
-                flex-direction:column;
-                align-items: center;
-                justify-content: center;
-                height:90vh;
-            }
-            input{
-                margin: 10px 0;
-                padding: 10px 14px;
-                border-radius: 10px;
-                border:none;
-                box-shadow: 0 0 1px 1px rgba(0,0,0,0.2);
-            }
-            .btn {
-                padding: 10px 14px;
-                border-radius: 10px;
-                border: none;
-                box-shadow: 0 0 1px 1px rgba(0,0,0,0.2);
-                background-color:#0016FF;
-                color:#fff;
-                font-size:14px;
-            }
-        </style>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./StyleAcceso.css">
     </head>
     <body>
         <% ModeloEmpleado modEmp =(ModeloEmpleado)session.getAttribute("sesEmp"); %>
-        <form action="ControlAcceso" method="POST">
-            <h1>Acceso al sistema</h1>
-            <input type="text" name="usuario" size="10" placeholder="Usuario"/>
-            <input type="password" name="password" size="10" placeholder="Contraseña"/>
-            <input type="submit" value="Iniciar Sesion" name="acc" class="btn"/>
-            <span><%= modEmp.getMsg() %></span>
-        </form>
+        <div class="form-container">    
+            <form class="form-login form-login-lx" action="ControlAcceso" method="POST">
+                <h1>Iniciar Sesion a Hotel</h1>
+                <input class="form__input" type="text" name="usuario" placeholder="Usuario"/>
+                <input class="form__input" type="password" name="password" placeholder="Password"/>
+                <input type="submit" value="Iniciar Sesion" name="acc" class="btn"/>
+                <div class="msg-login">
+                    
+                    <span><%= modEmp.getMsg() %></span>
+                    
+                </div>
+            </form>
+        </div>
     </body>
     <style></style>
 </html>

@@ -1,53 +1,44 @@
-<%-- 
-    Document   : VistaEmpleado
-    Created on : 31-oct-2020, 15:35:37
-    Author     : joelespinozaro
---%>
-
 <%@page import="presentacion.ModeloEmpleado"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
+        <title>Hotel / Empleado</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-        <style>
-            h1{
-                text-align:center;
-            }
-            form {
-                display: flex;
-                flex-direction:column;
-                align-items: center;
-                justify-content: center;
-                height:80vh;
-            }
-            input{
-                margin: 10px 0;
-                padding: 10px 14px;
-                border-radius: 10px;
-                border:none;
-                box-shadow: 0 0 1px 1px rgba(0,0,0,0.2);
-            }
-        </style>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./Styleglobal.css">
+        <link rel="stylesheet" href="./StyleEmpleado.css">
     </head>
     <body>
-        <h1>Gestión de Empleado</h1>
         <% ModeloEmpleado modEmp =(ModeloEmpleado)session.getAttribute("sesEmp"); %>
-        <form action="ControlEmpleado" method="Post">
-            <input type="text" name="codigo" size="20" value='<%= modEmp.getCodigo() %>' placeholder="Ingrese Código"/>
-            <input type="text" name="nombre" size="20" value='<%= modEmp.getNombre() %>' placeholder="Ingrese Nombre"/>
-            <input type="text" name="usuario" size="20" value='<%= modEmp.getUsuario() %>' placeholder="Ingrese Usuario"/>
-            <input type="text" name="password" size="20" value='<%= modEmp.getPassword() %>' placeholder="Ingrese Contraseña"/>
-            
+        <header>
             <section>
-                <input type="submit" name="acc" value="Nuevo"/>
-                <input type="submit" name="acc" value="Grabar"/>
-                <input type="submit" name="acc" value="Buscar"/>
-                <input type="submit" name="acc" value="Actualizar"/>
+                <h1>Proyecto Hotel</h1>
             </section>
-            <span><%= modEmp.getMsg() %></span>
-        </form>
+        </header>
+        <main>
+            <div>
+                <form action="ControlEmpleado" method="Post">
+                    <input type="submit" name="acc" value="Regresar" class="back"/>
+                </form>
+            </div>
+            <h1>Gestion de Empleado</h1>
+            <form action="ControlEmpleado" method="Post">
+                <input type="text" name="codigo"  value='<%= modEmp.getCodigo() %>' placeholder="Ingrese Codigo"/>
+                <input type="text" name="nombre" value='<%= modEmp.getNombre() %>' placeholder="Ingrese Nombre"/>
+                <input type="text" name="usuario" value='<%= modEmp.getUsuario() %>' placeholder="Ingrese Usuario"/>
+                <input type="text" name="password" value='<%= modEmp.getPassword() %>' placeholder="Ingrese Password"/>
+                <section>
+                    <input type="submit" name="acc" value="Nuevo" class="btn"/>
+                    <input type="submit" name="acc" value="Grabar" class="btn"/>
+                    <input type="submit" name="acc" value="Buscar" class="btn"/>
+                    <input type="submit" name="acc" value="Actualizar" class="btn"/>
+                </section>
+                <span><%= modEmp.getMsg() %></span>
+            </form>
+        </main>
         
     </body>
 </html>

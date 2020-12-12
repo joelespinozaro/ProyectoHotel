@@ -1,0 +1,24 @@
+main {
+    height:90vh;
+    color:#fff;
+    display:flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content:center;
+    align-items:center;
+}
+.menu-item{
+    background-color:#242526;
+    border-radius: 20px;
+    width:250px;
+    padding: 15px 30px;
+    margin: 0 0 10px 0;
+    border:none;
+    color:#fff;
+    font-size:16px;
+    font-weight: 700;
+    transition: background 0.5s ease;
+}
+.menu-item:hover{
+    background-color:#2d00f9;
+}

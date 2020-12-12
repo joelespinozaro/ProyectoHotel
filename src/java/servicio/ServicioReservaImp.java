@@ -1,4 +1,5 @@
 package servicio;
+import java.util.List;
 import negocio.*;
 import persistencia.*;
 
@@ -55,6 +56,8 @@ public class ServicioReservaImp implements ServicioReserva {
         return "10/10/2020";
     }
 
-
-    
+    @Override
+    public List listarHabitaciones() {
+        return serHab.listarHabitacion();
+    }
 }

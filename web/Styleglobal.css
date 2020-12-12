@@ -1,0 +1,42 @@
+*{
+    outline:none;
+}
+html{
+   font-family: 'Merriweather Sans', sans-serif;
+   font-size: 14px;
+}
+body{
+    padding: 0;
+    margin: 0;
+    background-color:#18191A;
+}
+header {
+    box-shadow: 0 0 5px 4px rgba(0, 0, 0, 0.7);
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color:#242526;
+    color:#fff;
+}
+section {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+h1 {
+    padding-left: 10px;
+}
+div {
+    padding-right: 10px;
+    font-size:15px;
+    font-weight: 700;
+}
+/*
+button {
+    margin-left: 10px;
+    width: auto;
+    background-color: #131113;
+    border: none;
+}
+*/
